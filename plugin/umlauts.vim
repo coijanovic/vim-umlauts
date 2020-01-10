@@ -13,4 +13,4 @@ function! s:replace_umlauts()
 		set ignorecase
 endfunct
 
-command! Umlauts call vim-umlauts#ReplaceUmlauts()
+command! Umlauts call vim-umlauts#replace_umlauts()
