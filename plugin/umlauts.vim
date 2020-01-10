@@ -1,4 +1,7 @@
-function! replace_umlauts()
+function! s:replace_umlauts()
+	if ignorecase
+		let hasig=1
+	set noic
 	%s/:a/ä/g
 	%s/:A/Ä/g
 	%s/:o/ö/g
@@ -6,6 +9,8 @@ function! replace_umlauts()
 	%s/:u/ü/g
 	%s/:U/Ü/g
 	%s/:s/ß/g
+	if hasig=1
+		set ignorecase
 endfunct
 
-command! umlauts call replace_umlauts()
+command! Umlauts call vim-umlauts#ReplaceUmlauts()
